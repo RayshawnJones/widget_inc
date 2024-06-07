@@ -1,0 +1,14 @@
+[
+    {"name": "Widget A", "price": 10.99, "description": "A very useful widget."},
+    {"name": "Widget B", "price": 15.99, "description": "Another useful widget."},
+    {"name": "Widget C", "price": 20.99, "description": "Yet another useful widget."},
+    {"name": "Widget D", "price": 25.99, "description": "A great widget for daily use."},
+    {"name": "Widget E", "price": 30.99, "description": "A high-quality widget."},
+    {"name": "Widget F", "price": 35.99, "description": "A premium widget."},
+    {"name": "Widget G", "price": 40.99, "description": "A top-of-the-line widget."},
+    {"name": "Widget H", "price": 45.99, "description": "An advanced widget."},
+    {"name": "Widget I", "price": 50.99, "description": "A state-of-the-art widget."},
+    {"name": "Widget J", "price": 55.99, "description": "A futuristic widget."},
+    {"name": "Widget K", "price": 60.99, "description": "An innovative widget."},
+    {"name": "Widget L", "price": 65.99, "description": "A cutting-edge widget."}
+]
