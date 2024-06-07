@@ -7,6 +7,7 @@ import WidgetCreate from './components/WidgetContainer/Create'
 import ShowWidget from './components/WidgetContainer/Show'
 import WidgetUpdate from './components/WidgetContainer/Update/Update'
 import * as widgetService from './services/WidgetService'
+import React from 'react'
 
 const App = () => {
 

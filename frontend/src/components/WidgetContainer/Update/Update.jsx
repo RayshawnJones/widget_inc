@@ -2,7 +2,7 @@ import './update.css';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
-
+import React from 'react';
 import * as widgetService from '../../../services/WidgetService'
 
 const WidgetUpdate = () => {

@@ -42,21 +42,42 @@ const create = async (widget) => {
 
 // Update a widget
 const updateWidget = async (widget, widgetId) => {
+    const REQ_URL = `${BASE_URL}${widgetId}/`; // Ensure the URL ends with a trailing slash
 
-    const REQ_URL = BASE_URL + widgetId
     try {
-        await fetch(REQ_URL, {
+        const response = await fetch(REQ_URL, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(widget),
         });
-    } catch (err) {
-        console.log(err);
-    }
 
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    } catch (err) {
+        console.error('Error updating widget:', err);
+    }
 };
+
+// // Update a widget
+// const updateWidget = async (widget, widgetId) => {
+
+//     const REQ_URL = BASE_URL + widgetId
+//     try {
+//         await fetch(REQ_URL, {
+//             method: 'PUT',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(widget),
+//         });
+//     } catch (err) {
+//         console.log(err);
+//     }
+
+// };
 
 // Delete a widget
 const deleteWidget = async (widgetId) => {
