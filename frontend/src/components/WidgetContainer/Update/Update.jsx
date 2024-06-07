@@ -1,6 +1,6 @@
 import './update.css';
 import { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import * as widgetService from '../../../services/WidgetService'
@@ -27,12 +27,14 @@ const WidgetUpdate = () => {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     }
+
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('this is running');
         await widgetService.updateWidget(formData, widgetId);
-        navigate('/widgets')
-    }
+        navigate('/widgets');
+    };
 
 
 
