@@ -12,7 +12,7 @@ const ShowWidget = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/widgets/${widgetId}`)
+      .get(`http://3.14.175.247:8000/api/widgets/${widgetId}`)
       .then((response) => setWidget(response.data))
       .catch((error) =>
         console.error("There was an error fetching the widget!", error)
@@ -30,7 +30,8 @@ const ShowWidget = () => {
       <p>Name: {widget.name}</p>
       <p>Price: ${widget.price}</p>
       <p>Description: {widget.description}</p>
-      <Link to="/widgets">Back to List</Link>
+      <Link to="/widgets">Back to List <br /></Link>
+      <Link to={`/widgets/${widgetId}/edit`}>Edit</Link>
     </div>
   );
 };
