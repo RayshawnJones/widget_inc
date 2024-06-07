@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import {Routes, Route, useNavigate} from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 
-import NavBar from './components/NavBar'
-import WidgetsHome from './components/WidgetsHome'
-import WidgetCreate from './components/WidgetCreate'
+import Nav from './components/NavBar/Nav'
+import Home from './components/Home/Home'
+import CreateWidget from './components/WidgetContainer/Create'
 import WidgetShow from './components/WidgetShow'
 import WidgetUpdate from './components/WidgetUpdate'
 
@@ -26,31 +26,31 @@ const App = () => {
     getAllWidgets()
     Navigate('/widgets')
   }
-  
+
   const handleDeleteWidget = async (widgetId) => {
     await widgetService.deleteWidget(widgetId)
     await getAllWidgets()
     Navigate('/widgets')
   }
-  
+
   const handleUpdateWidget = async (widget) => {
     await widgetService.updateWidget(widget, widget._id)
     await getAllWidgets()
     Navigate(`/widget/${widget._id}`)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getAllWidgets()
   }, [])
 
   return (
     <>
-      <NavBar />
+      <Nav />
       <Routes>
-        <Route path="/widgets" element={<WidgetsHome {...{widgetsArray}}/>} />
-        <Route path="/widgets/new" element={<WidgetCreate {...{ widgetsArray, handleCreateWidget}}/>} />
-        <Route path="/widgets/:widgetId" element={<WidgetShow {...{widgetsArray, handleDeleteWidget}}/>} />
-        <Route path="/widgets/:widgetId/edit" element={<WidgetUpdate {...{widgetsArray, handleUpdateWidget}}/>} />
+        <Route path="/widgets" element={<WidgetsHome {...{ widgetsArray }} />} />
+        <Route path="/widgets/new" element={<WidgetCreate {...{ widgetsArray, handleCreateWidget }} />} />
+        <Route path="/widgets/:widgetId" element={<WidgetShow {...{ widgetsArray, handleDeleteWidget }} />} />
+        <Route path="/widgets/:widgetId/edit" element={<WidgetUpdate {...{ widgetsArray, handleUpdateWidget }} />} />
       </Routes>
     </>
   );
