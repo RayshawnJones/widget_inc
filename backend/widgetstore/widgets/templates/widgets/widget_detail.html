@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ widget.name }}</title>
+</head>
+<body>
+    <h1>{{ widget.name }}</h1>
+    <p>Price: ${{ widget.price }}</p>
+    <p>{{ widget.description }}</p>
+    <a href="{% url 'widget_list' %}">Back to Widget Store</a>
+</body>
+</html>
