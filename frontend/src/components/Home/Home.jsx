@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Home.css'
 
@@ -9,6 +9,7 @@ import './Home.css'
 
 
 const Home = ({ widgetsArray }) => {
+    const [widgets, setWidgets] = useState('')
 
     useEffect(() => {
         axios.get('http://3.14.175.247:8000/api/widgets/')
