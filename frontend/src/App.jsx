@@ -4,7 +4,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import NavBar from './components/NavBar/Nav'
 import WidgetsHome from './components/Home/Home'
 import WidgetCreate from './components/WidgetContainer/Create'
-// import WidgetShow from './components/WidgetContainer/Show'
+import ShowWidget from './components/WidgetContainer/Show'
 import WidgetUpdate from './components/WidgetContainer/Update/Update'
 import * as widgetService from './services/WidgetService'
 
@@ -46,10 +46,10 @@ const App = () => {
       <NavBar />
       {/* <h1>Hello Everyone</h1> */}
       <Routes>
-        <Route path="/widgets" element={<WidgetsHome {...{widgetsArray}}/>} />
-        <Route path="/widgets/new" element={<WidgetCreate {...{ widgetsArray, handleCreateWidget}}/>} />
-        {/* <Route path="/widgets/:widgetId" element={<WidgetShow {...{widgetsArray, handleDeleteWidget}}/>} /> */}
-        <Route path="/widgets/:widgetId/edit" element={<WidgetUpdate {...{widgetsArray, handleUpdateWidget}}/>} />
+        <Route path="/widgets" element={<WidgetsHome {...{ widgetsArray }} />} />
+        <Route path="/widgets/new" element={<WidgetCreate {...{ widgetsArray, handleCreateWidget }} />} />
+        <Route path="/widgets/:widgetId" element={<ShowWidget {...{ widgetsArray }} />} />
+        <Route path="/widgets/:widgetId/edit" element={<WidgetUpdate {...{ widgetsArray, handleUpdateWidget }} />} />
       </Routes>
     </>
   );
