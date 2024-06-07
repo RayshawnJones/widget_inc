@@ -1,0 +1,12 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(62, 62, 139);
+    color: whitesmoke;
+    padding: 30px 90px;
+}
+
+nav h2{
+    color: whitesmoke;
+}
