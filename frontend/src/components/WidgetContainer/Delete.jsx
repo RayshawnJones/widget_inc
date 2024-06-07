@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import WidgetsHome from './WidgetsHome';
-import WidgetCreate from './WidgetCreate';
-import DeleteWidget from './DeleteWidget'; // Import your new Delete component
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import WidgetsHome from "./WidgetsHome";
+import WidgetCreate from "./WidgetCreate";
+import DeleteWidget from "./DeleteWidget"; // Import your new Delete component
 
 const App = () => {
   return (
