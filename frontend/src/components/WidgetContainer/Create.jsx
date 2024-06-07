@@ -54,7 +54,8 @@ const CreateWidget = ({ addWidget }) => {
         setDescription('');
     };
 
-    return (
+    return <>
+        <h1 className = 'create-header'>Create a New Widget</h1>
         <div className='add-widget-container'>
             <form className='add-widget' onSubmit={handleSubmit}>
                 <input
@@ -84,7 +85,7 @@ const CreateWidget = ({ addWidget }) => {
                 <button type="submit">+</button>
             </form>
         </div>
-    );
+    </>
 };
 
 export default CreateWidget;
