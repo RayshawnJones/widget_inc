@@ -1,5 +1,5 @@
 // Base url: VITE_BACK_END_SERVER_URL in .env file
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/widgets/`;
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}api/widgets/`;
 
 
 // Fetch all widgets
@@ -28,20 +28,21 @@ const show = async (widgetId) => {
 
 // Create a new widget
 const create = async (widget) => {
-    try {
-        const res = await fetch(BASE_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(widget),
-        });
-        return res.json();
-    } catch (err) {
-        console.log(err);
-    }
+	try {
+		const res = await fetch(BASE_URL, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(widget),
+		});
+		return res.json();
+	} catch (err) {
+		console.log(err);
+	}
 };
 
 // Update a widget
 const updateWidget = async (widget, widgetId) => {
+
     const REQ_URL = BASE_URL + widgetId
     try {
         await fetch(REQ_URL, {
@@ -54,10 +55,12 @@ const updateWidget = async (widget, widgetId) => {
     } catch (err) {
         console.log(err);
     }
+
 };
 
 // Delete a widget
 const deleteWidget = async (widgetId) => {
+
     const REQ_URL = BASE_URL + widgetId
     try {
         const res = await fetch(REQ_URL, {
@@ -75,3 +78,4 @@ const deleteWidget = async (widgetId) => {
 
 // Export the functions
 export { index, show, create, updateWidget, deleteWidget };
+
