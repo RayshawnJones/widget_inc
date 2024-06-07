@@ -1,6 +1,6 @@
 import { useState } from "react";
-import * as WidgetServices from 'frontend/src/services/WidgetService.js'
-import './Create.css'
+import * as WidgetServices from '../../services/WidgetService'
+import './Create.css';
 
 const CreateWidget = ({ addWidget }) => {
     const [inputWidget, setInputWidget] = useState('');

@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import {Routes, Route, useNavigate} from 'react-router-dom'
 
-import NavBar from './components/NavBar'
-import WidgetsHome from './components/WidgetsHome'
-import WidgetCreate from './components/WidgetCreate'
-import WidgetShow from './components/WidgetShow'
-import WidgetUpdate from './components/WidgetUpdate'
+import NavBar from './components/NavBar/Nav'
+import WidgetsHome from './components/Home/Home'
+import WidgetCreate from './components/WidgetContainer/Create'
+// import WidgetShow from './components/WidgetContainer/Show'
+import WidgetUpdate from './components/WidgetContainer/Update/Update'
 
-import * as widgetService from './services/widgets'
+import * as widgetService from './services/WidgetService'
 
 const App = () => {
 
@@ -46,10 +46,11 @@ const App = () => {
   return (
     <>
       <NavBar />
+      <h1>Hello Everyone</h1>
       <Routes>
         <Route path="/widgets" element={<WidgetsHome {...{widgetsArray}}/>} />
         <Route path="/widgets/new" element={<WidgetCreate {...{ widgetsArray, handleCreateWidget}}/>} />
-        <Route path="/widgets/:widgetId" element={<WidgetShow {...{widgetsArray, handleDeleteWidget}}/>} />
+        {/* <Route path="/widgets/:widgetId" element={<WidgetShow {...{widgetsArray, handleDeleteWidget}}/>} /> */}
         <Route path="/widgets/:widgetId/edit" element={<WidgetUpdate {...{widgetsArray, handleUpdateWidget}}/>} />
       </Routes>
     </>
