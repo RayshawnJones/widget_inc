@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 
 const App = () => {
 
