@@ -27,11 +27,11 @@ const App = () => {
     Navigate('/widgets')
   }
 
-  const handleDeleteWidget = async (widgetId) => {
-    await widgetService.deleteWidget(widgetId)
-    await getAllWidgets()
-    Navigate('/widgets')
-  }
+  // const handleDeleteWidget = async (widgetId) => {
+  //   await widgetService.deleteWidget(widgetId)
+  //   await getAllWidgets()
+  //   Navigate('/widgets')
+  // }
 
   const handleUpdateWidget = async (widget) => {
     await widgetService.updateWidget(widget, widget._id)
@@ -46,7 +46,7 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <h1>Hello Everyone</h1>
+      {/* <h1>Hello Everyone</h1> */}
       <Routes>
         <Route path="/widgets" element={<WidgetsHome {...{widgetsArray}}/>} />
         <Route path="/widgets/new" element={<WidgetCreate {...{ widgetsArray, handleCreateWidget}}/>} />
