@@ -1,5 +1,5 @@
 // Base url: VITE_BACK_END_SERVER_URL in .env file
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/widgets`;
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/widgets/`;
 
 
 // Fetch all widgets
