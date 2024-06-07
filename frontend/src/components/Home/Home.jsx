@@ -8,7 +8,7 @@ const Home = () => {
     const [widgets, setWidgets] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/widgets/')
+        axios.get('http://localhost:8000/api/widgets/')
             .then(response => {
                 setWidgets(response.data);
             })
