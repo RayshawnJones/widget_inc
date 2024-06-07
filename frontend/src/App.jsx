@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import {Routes, Route, useNavigate} from 'react-router-dom'
-
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import NavBar from './components/NavBar/Nav'
 import WidgetsHome from './components/Home/Home'
 import WidgetCreate from './components/WidgetContainer/Create'
 // import WidgetShow from './components/WidgetContainer/Show'
 import WidgetUpdate from './components/WidgetContainer/Update/Update'
+
 
 import * as widgetService from './services/WidgetService'
 
@@ -26,20 +26,20 @@ const App = () => {
     getAllWidgets()
     Navigate('/widgets')
   }
-  
+
   const handleDeleteWidget = async (widgetId) => {
     await widgetService.deleteWidget(widgetId)
     await getAllWidgets()
     Navigate('/widgets')
   }
-  
+
   const handleUpdateWidget = async (widget) => {
     await widgetService.updateWidget(widget, widget._id)
     await getAllWidgets()
     Navigate(`/widget/${widget._id}`)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getAllWidgets()
   }, [])
 
