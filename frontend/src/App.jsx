@@ -6,8 +6,6 @@ import WidgetsHome from './components/Home/Home'
 import WidgetCreate from './components/WidgetContainer/Create'
 // import WidgetShow from './components/WidgetContainer/Show'
 import WidgetUpdate from './components/WidgetContainer/Update/Update'
-
-
 import * as widgetService from './services/WidgetService'
 
 const App = () => {
