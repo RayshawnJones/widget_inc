@@ -43,9 +43,9 @@ const CreateWidget = ({ addWidget }) => {
         // Store new widget data returned from the service page routes
         const newWidget = await WidgetServices.create(newWidgetData);
 
-        if (newWidget) {
-            addWidget(newWidget); // Updates state in App.jsx
-        }
+        // if (newWidget) {
+        //     addWidget(newWidget); // Updates state in App.jsx
+        // }
 
         // Reset input fields
         setInputWidget('');
