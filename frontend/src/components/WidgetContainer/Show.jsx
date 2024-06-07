@@ -4,7 +4,7 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 
 //ShowWidget is a functional component that displays details about a specific widget. A widget could be any item or product.Uses the useState hook to create a state variable widget and a function setWidget to update it. Initially, widget is set to null.
-const ShowWidget = () => {
+const ShowWidget = ({handleDeleteWidget}) => {
   const [widget, setWidget] = useState(null);
   const { widgetId } = useParams();
   
@@ -32,6 +32,8 @@ const ShowWidget = () => {
       <p>Description: {widget.description}</p>
       <Link to="/widgets">Back to List <br /></Link>
       <Link to={`/widgets/${widgetId}/edit`}>Edit</Link>
+      <br></br>
+      <button onClick={()=>handleDeleteWidget(widgetId)}>Delete</button>
     </div>
   );
 };

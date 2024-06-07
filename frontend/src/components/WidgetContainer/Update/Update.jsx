@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import * as widgetService from '../../../services/WidgetService'
 
-const WidgetUpdate = () => {
+const WidgetUpdate = ({handleUpdateWidget}) => {
     const navigate = useNavigate()
     const { widgetId } = useParams();
     const [formData, setFormData] = useState({
