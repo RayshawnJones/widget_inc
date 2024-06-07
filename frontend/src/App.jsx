@@ -1,12 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {Routes, Route} from 'react-router-dom'
 
 const App = () => {
 
   return (
-    <h1>Hello world!</h1>
+    <>
+      <NavBar />
+      <Routes>
+        <Route path="/widgets" element={<WidgetsHome />} />
+        <Route path="/widgets/new" element={<WidgetCreate />} />
+        <Route path="/widgets/:widgetId" element={<WidgetShow />} />
+        <Route path="/widgets/:widgetId/edit" element={<WidgetUpdate />} />
+      </Routes>
+    </>
   );
 }
 

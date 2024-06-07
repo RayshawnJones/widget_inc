@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Widget Store</title>
+</head>
+<body>
+    <h1>Widget Store</h1>
+    <ul>
+        {% for widget in widgets %}
+            <li>
+                <a href="{% url 'widget_detail' widget.id %}">{{ widget.name }}</a>
+                - ${{ widget.price }}
+                <p>{{ widget.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
