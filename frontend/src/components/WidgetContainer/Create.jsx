@@ -1,41 +1,90 @@
 import { useState } from "react";
-import * as WidgetServices from '../../services/WidgetService'
+import * as WidgetServices from '../../services/WidgetService';
 import './Create.css';
 
 const CreateWidget = ({ addWidget }) => {
     const [inputWidget, setInputWidget] = useState('');
+    const [name, setName] = useState('');
+    const [price, setPrice] = useState('');
+    const [description, setDescription] = useState('');
 
-    // Updates the input field with the current Input state
+    // Updates the input fields with the current state
     const handleInputChange = (event) => {
-        setInputWidget(event.target.value)
+        const { name, value } = event.target;
+        switch (name) {
+            case 'widget':
+                setInputWidget(value);
+                break;
+            case 'name':
+                setName(value);
+                break;
+            case 'price':
+                setPrice(value);
+                break;
+            case 'description':
+                setDescription(value);
+                break;
+            default:
+                break;
+        }
     };
 
-    // Creates a new list and resets the input
+    // Creates a new widget and resets the inputs
     const handleSubmit = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
 
+        const newWidgetData = {
+            widget: inputWidget,
+            name: name,
+            price: price,
+            description: description
+        };
 
-        // Store new widget data return from the service page routes
-        const newWidget = await WidgetServices.create(inputWidget)
+        // Store new widget data returned from the service page routes
+        const newWidget = await WidgetServices.create(newWidgetData);
 
         if (newWidget) {
             addWidget(newWidget); // Updates state in App.jsx
         }
 
-        setInputWidget('') // Resets inputWidget to empty string
-    }
+        // Reset input fields
+        setInputWidget('');
+        setName('');
+        setPrice('');
+        setDescription('');
+    };
 
-    return <>
+    return (
         <div className='add-widget-container'>
             <form className='add-widget' onSubmit={handleSubmit}>
-                <input type="text" required placeholder='Create New Widget'
-                    value={inputWidget} onChange={handleInputChange} />
+                <input
+                    type="text"
+                    required
+                    placeholder='Name'
+                    name="name"
+                    value={name}
+                    onChange={handleInputChange}
+                />
+                <input
+                    type="number"
+                    required
+                    placeholder='Price'
+                    name="price"
+                    value={price}
+                    onChange={handleInputChange}
+                />
+                <input
+                    type="text"
+                    required
+                    placeholder='Description'
+                    name="description"
+                    value={description}
+                    onChange={handleInputChange}
+                />
                 <button type="submit">+</button>
             </form>
         </div>
-    </>
+    );
 };
 
-
-export default CreateWidget
-
+export default CreateWidget;
