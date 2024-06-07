@@ -36,4 +36,6 @@ const CreateWidget = ({ addWidget }) => {
     </>
 };
 
+
 export default CreateWidget
+
