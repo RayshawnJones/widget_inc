@@ -11,7 +11,7 @@ const CreateWidget = ({ addWidget }) => {
     };
 
     // Creates a new list and resets the input
-    const handleSubmitbutton = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
 
 
@@ -26,11 +26,14 @@ const CreateWidget = ({ addWidget }) => {
     }
 
     return <>
-        
-
-
-
-
+        <div className='add-widget-container'>
+            <form className='add-widget' onSubmit={handleSubmit}>
+                <input type="text" required placeholder='Create New Widget'
+                    value={inputWidget} onChange={handleInputChange} />
+                <button type="submit">+</button>
+            </form>
+        </div>
     </>
 };
 
+export default CreateWidget
