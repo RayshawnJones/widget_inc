@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import './App.css'
 import {Routes, Route} from 'react-router-dom'
+import NavBar from './components/NavBar'
+import WidgetsHome from './components/WidgetsHome'
+import WidgetCreate from './components/WidgetCreate'
+import WidgetShow from './components/WidgetShow'
+import WidgetUpdate from './components/WidgetUpdate'
 
 const App = () => {
 
