@@ -1,7 +1,7 @@
 // frontend/src/components/home/Home.jsx
 
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const Home = ({widgetsArray}) => {
