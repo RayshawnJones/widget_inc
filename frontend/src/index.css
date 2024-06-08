@@ -13,3 +13,22 @@
 body {
   background-color: rgb(66, 123, 127);
 }
+
+.button-container{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.button-container button, .button-container Link {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: rgb(93, 114, 217);
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
