@@ -1,8 +1,9 @@
+import React from 'react';
 import { useState } from "react";
 import * as WidgetServices from '../../services/WidgetService';
 import './Create.css';
 
-const CreateWidget = ({ addWidget }) => {
+const CreateWidget = () => {
     const [inputWidget, setInputWidget] = useState('');
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
@@ -54,38 +55,48 @@ const CreateWidget = ({ addWidget }) => {
         setDescription('');
     };
 
-    return <>
-        <h1 className = 'create-header'>Create a New Widget</h1>
-        <div className='add-widget-container'>
-            <form className='add-widget' onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    required
-                    placeholder='Name'
-                    name="name"
-                    value={name}
-                    onChange={handleInputChange}
-                />
-                <input
-                    type="number"
-                    required
-                    placeholder='Price'
-                    name="price"
-                    value={price}
-                    onChange={handleInputChange}
-                />
-                <input
-                    type="text"
-                    required
-                    placeholder='Description'
-                    name="description"
-                    value={description}
-                    onChange={handleInputChange}
-                />
-                <button type="submit">+</button>
-            </form>
+    return ( 
+        <div id='create-wrapper'>
+            <h1 id='create-header'>Create a New Widget</h1>
+            <div id='create-container'>
+                <form className='add-widget' onSubmit={handleSubmit}>
+                    <label htmlFor="name">Name:</label><br />
+                    <input
+                        id='name'
+                        type="text"
+                        required
+                        // placeholder='Name'
+                        name="name"
+                        value={name}
+                        onChange={handleInputChange}
+                    /><br />
+                    <label htmlFor="price">Price:</label><br />
+                    <input
+                        id='price'
+                        type="number"
+                        required
+                        // placeholder='Price'
+                        name="price"
+                        value={price}
+                        onChange={handleInputChange}
+                    /><br />
+                    <label htmlFor="description">Description:</label><br />
+                    <input
+                        id='description'
+                        type="text"
+                        required
+                        // placeholder='Description'
+                        name="description"
+                        value={description}
+                        onChange={handleInputChange}
+                    /><br />
+                    <div className="button-container">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </>
+    )
 };
 
 export default CreateWidget;
