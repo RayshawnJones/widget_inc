@@ -1,4 +1,4 @@
-import './update.css';
+import './Update.css';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -41,19 +41,22 @@ const WidgetUpdate = () => {
     const { name, price, description } = formData;
 
     return (
-        <>
-            <div className="update-form" >
+        <div id="update-wrapper" >
+            <h1>Edit Widget</h1>
+            <div id="update-container">
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="name">Name: </label>
-                    <input type="text" name='name' id='name' value={name} onChange={handleChange} />
-                    <label htmlFor="price">Price: </label>
-                    <input type="text" name='price' id='price' value={price} onChange={handleChange} />
-                    <label htmlFor="description">Description: </label>
-                    <input type="text" name='description' id='description' value={description} onChange={handleChange} />
-                    <button>Submit</button>
+                    <label htmlFor="name">Name: </label><br />
+                    <input type="text" name='name' id='name' value={name} onChange={handleChange} /><br />
+                    <label htmlFor="price">Price: </label><br />
+                    <input type="text" name='price' id='price' value={price} onChange={handleChange} /><br />
+                    <label htmlFor="description">Description: </label><br />
+                    <input type="text" name='description' id='description' value={description} onChange={handleChange} /><br />
+                    <div className="button-container">
+                        <button>Submit</button>
+                    </div>
                 </form>
             </div>
-        </>
+        </div>
     )
 }
 

@@ -35,7 +35,7 @@ const ShowWidget = ({handleDeleteWidget}) => {
           <p>${widget.price}</p>
           <h3>Description:</h3>
           <p>{widget.description}</p>
-          <div id="button-container">
+          <div className="button-container">
             <Link to="/widgets"><button>Back to List</button></Link>
             <Link to={`/widgets/${widgetId}/edit`}><button>Edit</button></Link>
             <button onClick={()=>handleDeleteWidget(widgetId)}>Delete</button>
