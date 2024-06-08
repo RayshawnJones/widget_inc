@@ -6,21 +6,36 @@
 
 }
 
-
 #home-wrapper h1{
     font-size: 50px;
     font-weight: 700;
     margin: 20px auto;
+    background-color: var(--focus-background-color);
+    border-radius: 10px;
+    padding: 10px 20px;
 }
 
-#home-wrapper ul{
-    list-style: none;
+
+#home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 80%;
+    background-color: var(--focus-background-color);
+    padding: 40px 50px;
+    border-radius: 20px;
 }
 
-#home-wrapper ul li{
+#home-container ul{
+    list-style: none;
+    width: 100%;
+}
+
+#home-container ul li{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     padding: 10px 0;
 }

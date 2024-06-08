@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react"; 
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import './Show.css'
 
 //ShowWidget is a functional component that displays details about a specific widget. A widget could be any item or product.Uses the useState hook to create a state variable widget and a function setWidget to update it. Initially, widget is set to null.
 const ShowWidget = ({handleDeleteWidget}) => {
@@ -25,15 +26,21 @@ const ShowWidget = ({handleDeleteWidget}) => {
   }
 // the data is fetched and widget is updated, it returns a div that displays the widget's details: name, price, and description. It also includes a link to go back to the list of widgets.
   return (
-    <div>
-      <h1>Widget Details</h1>
-      <p>Name: {widget.name}</p>
-      <p>Price: ${widget.price}</p>
-      <p>Description: {widget.description}</p>
-      <Link to="/widgets">Back to List <br /></Link>
-      <Link to={`/widgets/${widgetId}/edit`}>Edit</Link>
-      <br></br>
-      <button onClick={()=>handleDeleteWidget(widgetId)}>Delete</button>
+    <div id="show-wrapper">
+        <h1>Widget Details</h1>
+        <div id="show-container">
+          <h3>Name: </h3>
+          <p>{widget.name}</p>
+          <h3>Price:</h3>
+          <p>${widget.price}</p>
+          <h3>Description:</h3>
+          <p>{widget.description}</p>
+          <div id="button-container">
+            <Link to="/widgets"><button>Back to List</button></Link>
+            <Link to={`/widgets/${widgetId}/edit`}><button>Edit</button></Link>
+            <button onClick={()=>handleDeleteWidget(widgetId)}>Delete</button>
+          </div>
+        </div>
     </div>
   );
 };
