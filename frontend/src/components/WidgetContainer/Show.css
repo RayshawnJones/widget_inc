@@ -1,11 +1,11 @@
-#update-wrapper{
+#show-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#update-wrapper h1{
+#show-wrapper h1{
     font-size: 50px;
     font-weight: 700;
     margin: 20px auto;
@@ -14,28 +14,22 @@
     padding: 10px 20px;
 }
 
-#update-container{
+#show-container{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     width: 50%;
     background-color: var(--focus-background-color);
     padding: 40px 50px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
-#update-container label, #update-container input{
+#show-container h3{
+    margin-top: 10px;
+}
+
+#show-container p{
     width: 100%;
-    margin: 10px 0;
-}
-
-#update-container label{
-    font-size: 20px;
-    font-weight: 700;
-}
-
-#update-container input{
-    font-size: 17px;
-    padding: 5px;
-    border-radius: 5px;
+    margin: 5px 0;
 }

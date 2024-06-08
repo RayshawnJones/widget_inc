@@ -20,13 +20,15 @@ const Home = () => {
     return (
         <div id='home-wrapper'>
             <h1>Welcome to Widgets, Inc.</h1>
-            <ul>
-                {widgets.map(widget => (
-                    <li key={widget.id}>
-                        <Link to={`/widgets/${widget.id}`}>{widget.name} - ${widget.price}</Link>
-                    </li>
-                ))}
-            </ul>
+            <div id="home-container">
+                <ul>
+                    {widgets.map(widget => (
+                        <li key={widget.id}>
+                            <Link to={`/widgets/${widget.id}`}>{widget.name} - ${widget.price}</Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 };
