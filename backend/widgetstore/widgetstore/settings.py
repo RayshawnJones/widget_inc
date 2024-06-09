@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-k&-dfh_fk=d*33gv-89drfqzpvjurx95xf#z4j4($^#_2u^$kq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.14.175.247']
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
